@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Barra de navegación */
+nav{
+    display: flex;
+    background: #273469;
+    height: 4em;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/*  Quitamos los subrayados
+    Damos color blanco
+    Aplicamos padding    
+*/
+nav div a.link, .brand, .toggle{
+    text-decoration: none;
+    color: white;
+    padding: 15px 15px;
+}
+
+
+
+/* Ocultamos el toggle button */
+.toggle{
+    display: none;
+}
+
+/*
+    Aplicamos propiedad flex (block)
+    Distribuimos los contenedores en toda nuestra barra
+*/
+nav .left, nav .right{
+    display: flex;
+    flex: 1;
+}
+
+/*
+    Recorremos los elementos del contenedor derecho
+    hacia al final de nuestro nav
+*/
+nav .right{
+    justify-content: flex-end;
+}
+
+/*
+    Efectos Hover
+*/
+
+.left a.link:hover,
+.right a.link:hover{
+    background: #39393A;   
+}
+
+
+/* MediaQueries */
+
+@media screen and (max-width: 48em){
+    nav{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        flex-direction: column;
+    }
+
+    /*
+        Ocultamos los contenedores izq. der.
+    */
+    #navbar div{
+        display: none;
+    }
+
+    /* Mostramos el toggle button */
+    .toggle{
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 0px;
+    }
+
+    /* Estilos al activar o presionar el toggle button */
+   #navbar.active{
+       display: flex;
+       height: auto;
+   }
+
+    #navbar.active .left,
+    #navbar.active .right{
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
